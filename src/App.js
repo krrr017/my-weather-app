@@ -3,13 +3,15 @@ import DetailCard from "./components/DetailCard";
 import SummaryCard from "./components/SummaryCard";
 
 function App() {
+  const REACT_APP_URL = 'https://api.openweathermap.org/data/2.5/forecast?'
+  const REACT_APP_ICON_URL = 'https://openweathermap.org/img/wn/'
   const API_KEY = process.env.REACT_APP_API_KEY;
 
   const [noData, setNoData] = useState('No Data Yet')
   const [searchTerm, setSearchTerm] = useState('')
   const [weatherData, setWeatherData] = useState([])
   const [city, setCity] = useState('Unknown location')
-  const [weatherIcon, setWeatherIcon] = useState(`${process.env.REACT_APP_ICON_URL}10n@2x.png`)
+  const [weatherIcon, setWeatherIcon] = useState(`${REACT_APP_ICON_URL}10n@2x.png`)
 
 
   const handleSubmit = (e) => {
@@ -26,7 +28,7 @@ function App() {
     let how_to_search = `q=${location}` 
 
     try {
-      let res = await fetch(`${process.env.REACT_APP_URL+how_to_search}
+      let res = await fetch(`${REACT_APP_URL+how_to_search}
       &appid=${API_KEY}&units=metric&cnt=4`)
       let data = await res.json()
       if(data.cod !== "200") {
@@ -35,7 +37,7 @@ function App() {
       }
       setWeatherData(data)
       setCity(`${data.city.name}, ${data.city.country}`)
-      setWeatherIcon(`${process.env.REACT_APP_ICON_URL+data.list[0].weather[0]["icon"]}@4x.png`)
+      setWeatherIcon(`${REACT_APP_ICON_URL+data.list[0].weather[0]["icon"]}@4x.png`)
     } catch (error) {
       console.log("error encountered" +error)
     }
