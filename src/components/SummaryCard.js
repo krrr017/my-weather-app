@@ -1,7 +1,7 @@
 import moment from 'moment'
 
 function SummaryCard({day}) {
-    let day_icon = `${process.env.REACT_APP_ICON_URL + day.weather[0]["icon"]}@2x.png`
+    let day_icon = `${REACT_APP_ICON_URL + day.weather[0]["icon"]}@2x.png`
     return (
         <li className="container p-4 flex items-center justify-center bg-white shadow-lg rounded-lg my-auto mr-1">
             <div className="my-4">
