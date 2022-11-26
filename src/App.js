@@ -5,7 +5,7 @@ import SummaryCard from "./components/SummaryCard";
 function App() {
   const REACT_APP_URL = 'https://api.openweathermap.org/data/2.5/forecast?'
   const REACT_APP_ICON_URL = 'https://openweathermap.org/img/wn/'
-  const API_KEY = process.env.REACT_APP_API_KEY;
+  const API_KEY = '762b3d4401303f87b5e222aa073e6660'
 
   const [noData, setNoData] = useState('No Data Yet')
   const [searchTerm, setSearchTerm] = useState('')
