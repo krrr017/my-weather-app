@@ -1,6 +1,7 @@
 import moment from 'moment'
 
 function SummaryCard({day}) {
+    const REACT_APP_ICON_URL = 'https://openweathermap.org/img/wn/'
     let day_icon = `${REACT_APP_ICON_URL + day.weather[0]["icon"]}@2x.png`
     return (
         <li className="container p-4 flex items-center justify-center bg-white shadow-lg rounded-lg my-auto mr-1">
