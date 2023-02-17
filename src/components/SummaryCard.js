@@ -4,7 +4,7 @@ function SummaryCard({day}) {
     const REACT_APP_ICON_URL = 'https://openweathermap.org/img/wn/'
     let day_icon = `${REACT_APP_ICON_URL + day.weather[0]["icon"]}@2x.png`
     return (
-        <li className="container p-4 flex items-center justify-center bg-white shadow-lg rounded-lg my-auto mr-1">
+        <li className="container p-4 flex items-center justify-center bg-amber-100 rounded-lg my-auto mr-1">
             <div className="my-4">
                 <p className="font-bold text-3xl text-amber-500 mb-2">{Math.round(day.main.temp)}&deg;C</p>
                 
